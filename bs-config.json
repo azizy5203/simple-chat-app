@@ -1,0 +1,9 @@
+{
+  "files": ["./src/**/*.{html,htm,css,js}"],
+  "server": {
+    "baseDir": "src/client"
+  },
+  "browserSyncOptions": {
+    "mirror": false
+  }
+}

@@ -2,9 +2,13 @@
   "name": "simple-caht-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon --watch src/server src/server/server.js",
+    "client": "lite-server --baseDir=src/client --no-mirror",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "rollup -c",
+    "build:css": "postcss src/client/style.css -o dist/style.css",
+    "build:all": "npm run build && npm run build:css && cp src/client/index.html dist/"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,13 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "concurrently": "^9.1.2",
+    "cssnano": "^7.0.7",
+    "lite-server": "^2.6.1",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }

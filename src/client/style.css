@@ -1,3 +1,97 @@
-*{
-    maring:0
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+.message-wrapper {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+  gap: 3rem;
+  overflow: auto;
+  border: 1px solid dodgerblue;
+  padding: 1rem;
+  width: 100vw;
+}
+
+.my-message {
+  align-self: start;
+  background-color: #f7aa1b;
+  padding: 0.5rem 1rem;
+  border-radius: 0 18px 18px 18px;
+  color: white;
+  text-align: left;
+  max-width: 30vw;
+  word-break: break-word;
+  max-height: 100%;
+}
+
+.incoming-message {
+  justify-self: end;
+  align-self: self-start;
+  background-color: crimson;
+  padding: 0.5rem 1rem;
+  border-radius: 18px 0 18px 18px;
+  color: white;
+  text-align: left;
+  max-width: 30vw;
+  word-break: break-word;
+  max-height: 100%;
+}
+
+.message-time {
+  font-size: small;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.log-message {
+  justify-self: center;
+  font-size: small;
+  color: #333;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.log-message--error {
+  color: red;
+}
+
+.message-form {
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.message-input {
+  flex: 1 1 0;
+  height: 3rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.message-send-btn {
+  padding: 4px 8px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
